@@ -4,9 +4,7 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
 import net.lab.myapplication.App
-import net.lab.myapplication.di.module.ActivityModule
-import net.lab.myapplication.di.module.DbModule
-import net.lab.myapplication.di.module.FragmentModule
+import net.lab.myapplication.di.module.*
 import javax.inject.Singleton
 
 /**
@@ -16,9 +14,12 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AndroidSupportInjectionModule::class,
-        DbModule::class,
-        ActivityModule::class,
-        FragmentModule::class
+        DataApiModule::class,
+        DataDbModule::class,
+        DomainRepositoryModule::class,
+        DomainInteractModule::class,
+        UiActivityModule::class,
+        UiFragmentModule::class
     ]
 )
 interface AppComponent {

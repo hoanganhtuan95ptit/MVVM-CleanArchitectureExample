@@ -7,7 +7,7 @@ import net.lab.myapplication.data.db.realm.RealmImageDb
 import javax.inject.Singleton
 
 @Module
-class DbModule {
+class DataDbModule {
 
     @Singleton
     @Provides

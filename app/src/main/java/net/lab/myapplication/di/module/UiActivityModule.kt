@@ -9,7 +9,7 @@ import net.lab.myapplication.MainActivity
  * Created by vinh on 2019-05-30
  */
 @Module
-abstract class ActivityModule {
+abstract class UiActivityModule {
 
     @ActivityScope
     @ContributesAndroidInjector
