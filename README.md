@@ -4,7 +4,7 @@
 ##### 2.Clean Architecture
 
  ![Drag Racing](https://github.com/hoanganhtuan95ptit/MVVM-CleanArchitectureExample/blob/master/image/cleanArchitecture.jpeg) |  ![Drag Racing](https://github.com/hoanganhtuan95ptit/MVVM-CleanArchitectureExample/blob/master/image/cleanArchitecture2.png)  
-
+--- | --- 
 
 
 * `Entities` là khái niệm dùng để mô tả các Business Logic. Đây là layer quan trọng nhất, là nơi bạn thực hiện giải quyết các vấn đề - mục đích khi xây dựng app. Layer này không chứa bất kỳ một framework nào, bạn có thể chạy nó mà không cần emulator. Nó giúp bạn dễ dàng test, maintain và develop phần business logic.
