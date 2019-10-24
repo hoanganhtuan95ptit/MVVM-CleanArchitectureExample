@@ -1,9 +1,9 @@
-package net.lab.myapplication.data.entities
+package net.lab.myapplication.data.api.retrofit.entities
 
 import com.fasterxml.jackson.annotation.JsonInclude
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-class Image {
+class RetrofitImage {
     var id: String = ""
     var url: String = ""
 

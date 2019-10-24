@@ -1,4 +1,4 @@
-package net.citigo.kiotviet.pos.fnb.ui.adapters
+package net.lab.myapplication.ui.adapter
 
 import android.app.Activity
 import android.view.LayoutInflater
@@ -10,16 +10,16 @@ import citigo.core.ui.BaseAdapter
 import citigo.core.util.ScreenUtils
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import kotlinx.android.synthetic.main.item_table.view.*
+import net.lab.domain.entities.ImageEntity
 import net.lab.myapplication.App
 import net.lab.myapplication.R
-import net.lab.myapplication.data.entities.Image
 import net.lab.myapplication.utils.extention.loadData
 import java.util.*
 import kotlin.math.roundToInt
 
 class ImageAdapter(
     activity: Activity?
-) : BaseAdapter<Image>(activity, null, null) {
+) : BaseAdapter<ImageEntity>(activity, null, null) {
 
     companion object {
 
@@ -49,13 +49,13 @@ class ImageAdapter(
         return GridLayoutManager(activity, COL)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder<Image> {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder<ImageEntity> {
         return TableHolder.create(parent)
     }
 
 
     class TableHolder(itemView: View) :
-        ViewHolder<Image>(itemView, null) {
+        ViewHolder<ImageEntity>(itemView, null) {
 
         companion object {
 
@@ -73,7 +73,7 @@ class ImageAdapter(
             }
         }
 
-        override fun bindData(item: Image, items: ArrayList<Image>, position: Int) {
+        override fun bindData(item: ImageEntity, items: ArrayList<ImageEntity>, position: Int) {
             super.bindData(item, items, position)
             itemView.ivPhoto.loadData(item.url, CenterCrop())
         }

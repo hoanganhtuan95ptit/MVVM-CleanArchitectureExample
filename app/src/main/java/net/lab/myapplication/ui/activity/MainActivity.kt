@@ -6,7 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
-import net.citigo.kiotviet.pos.fnb.ui.adapters.ImageAdapter
+import net.lab.myapplication.ui.adapter.ImageAdapter
 import net.lab.myapplication.R
 import net.lab.myapplication.ui.viewmodel.ImageViewModel
 import net.lab.myapplication.ui.viewmodel.factory.ImageViewModelFactory

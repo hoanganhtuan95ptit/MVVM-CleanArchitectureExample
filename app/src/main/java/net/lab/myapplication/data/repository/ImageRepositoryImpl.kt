@@ -4,7 +4,6 @@ import net.lab.domain.entities.ImageEntity
 import net.lab.domain.repository.ImageRepository
 import net.lab.myapplication.data.api.ApiProvider
 import net.lab.myapplication.data.db.DbProvider
-import net.lab.myapplication.data.entities.mapper.EntityMapperProvider
 
 class ImageRepositoryImpl(
     private val apiProvider: ApiProvider,
@@ -16,17 +15,14 @@ class ImageRepositoryImpl(
     }
 
     override fun sync(): List<ImageEntity> {
-        val images = apiProvider.imageApi.getImages()
-        return EntityMapperProvider.mapperImageEntityImage.mapToEntity(images)
+        return apiProvider.imageApi.getImages()
     }
 
     override fun save(list: List<ImageEntity>) {
-        val images = EntityMapperProvider.mapperImageEntityImage.mapFromEntity(list)
-        dbProvider.imageDb.insertOrUpdate(images)
+        dbProvider.imageDb.insertOrUpdate(list)
     }
 
     override fun getImage(): List<ImageEntity> {
-        val images = dbProvider.imageDb.getAll()
-        return EntityMapperProvider.mapperImageEntityImage.mapToEntity(images)
+        return dbProvider.imageDb.getAll()
     }
 }

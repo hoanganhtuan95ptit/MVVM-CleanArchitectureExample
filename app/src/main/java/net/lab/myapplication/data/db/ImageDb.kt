@@ -1,7 +1,5 @@
 package net.lab.myapplication.data.db
 
-import net.lab.myapplication.data.entities.Image
+import net.lab.domain.entities.ImageEntity
 
-interface ImageDb : InterfaceDb<Image> {
-
-}
+interface ImageDb : InterfaceDb<ImageEntity>

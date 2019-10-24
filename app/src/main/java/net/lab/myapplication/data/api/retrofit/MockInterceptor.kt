@@ -2,7 +2,7 @@ package net.lab.myapplication.data.api.retrofit
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import net.lab.myapplication.BuildConfig
-import net.lab.myapplication.data.entities.Image
+import net.lab.myapplication.data.api.retrofit.entities.RetrofitImage
 import okhttp3.*
 
 class MockInterceptor : Interceptor {
@@ -12,13 +12,13 @@ class MockInterceptor : Interceptor {
             val uri = chain.request().url().uri().toString()
             val responseString = when {
                 uri.endsWith("image") -> {
-                    val images = ArrayList<Image>()
+                    val images = ArrayList<RetrofitImage>()
                     for (x in 200..300) {
                         images.add(
-                            (Image(
+                            RetrofitImage(
                                 x.toString(),
                                 "https://picsum.photos/id/$x/500/500"
-                            ))
+                            )
                         )
                     }
                     ObjectMapper().writeValueAsString(images)
