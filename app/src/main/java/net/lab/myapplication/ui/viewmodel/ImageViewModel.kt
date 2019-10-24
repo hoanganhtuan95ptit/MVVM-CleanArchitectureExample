@@ -18,6 +18,7 @@ class ImageViewModel(
     fun getImage() {
         viewModelScope.launch(Dispatchers.Main) {
             val results = async(Dispatchers.IO) {
+                imageInteract.sync()
                 imageInteract.getImage()
             }
 
