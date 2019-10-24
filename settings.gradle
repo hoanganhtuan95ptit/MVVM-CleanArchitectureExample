@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':domain'/*, ':dataDb', ':dataApi'*/
 rootProject.name='Test'

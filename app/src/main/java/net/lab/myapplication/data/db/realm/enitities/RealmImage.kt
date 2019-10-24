@@ -1,25 +1,18 @@
 package net.lab.myapplication.data.db.realm.enitities
 
-import com.fasterxml.jackson.annotation.JsonInclude
-import com.fasterxml.jackson.annotation.JsonProperty
+import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
-import net.lab.myapplication.data.entities.Image
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
-class RealmImage : Image {
+open class RealmImage : RealmObject {
 
     @PrimaryKey
-    @JsonProperty("id")
-    var idRealm: String = ""
+    var id: String = ""
+    var url: String = ""
 
-    @JsonProperty("url")
-    var urlRealm: String = ""
+    constructor()
 
-    override fun getId(): String {
-        return idRealm
-    }
-
-    override fun getUrl(): String {
-        return urlRealm
+    constructor(id: String, url: String) {
+        this.id = id
+        this.url = url
     }
 }

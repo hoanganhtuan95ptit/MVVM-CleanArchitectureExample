@@ -1,73 +1,38 @@
 package net.lab.myapplication.data.db.realm
 
-import net.lab.myapplication.data.db.AbstractDb
+import io.realm.Realm
+import io.realm.RealmModel
+import net.lab.myapplication.App
+import net.lab.myapplication.data.db.realm.enitities.RealmImage
 
-open class RealmDb<T:Any> : AbstractDb<T>() {
-    override fun handleInsertOrUpdate(t: T) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+open abstract class RealmDb {
+
+    fun deleteAll(clazz: Class<RealmImage>) {
+        Realm.init(App.shared)
+        val realm = Realm.getDefaultInstance()
+        realm.beginTransaction()
+        realm.where(clazz).findAll().deleteAllFromRealm()
+        realm.commitTransaction()
+        realm.close()
     }
 
-    override fun handleInsertOrUpdate(t: List<T>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    fun <T : RealmModel> getAll(clazz: Class<T>): List<T> {
+        Realm.init(App.shared)
+        val realm = Realm.getDefaultInstance()
+        realm.beginTransaction()
+        val results = realm.copyFromRealm(realm.where(clazz).findAll())
+        realm.commitTransaction()
+        realm.close()
+        return results
     }
 
-    override fun handleDelete(t: T) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    fun <T : RealmModel> save(list: List<T>) {
+        Realm.init(App.shared)
+        val realm = Realm.getDefaultInstance()
+        realm.beginTransaction()
+        realm.insertOrUpdate(list)
+        realm.commitTransaction()
+        realm.close()
     }
 
-    override fun handleDelete(t: List<T>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getAll(clazz: Class<T>): List<T> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getListBy(field: String, data: Int, clazz: Class<T>): List<T> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getListBy(field: String, data: Long, clazz: Class<T>): List<T> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getListBy(field: String, data: Float, clazz: Class<T>): List<T> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getListBy(field: String, data: Double, clazz: Class<T>): List<T> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getListBy(field: String, data: String, clazz: Class<T>): List<T> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getListBy(field: String, data: Boolean, clazz: Class<T>): List<T> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getBy(field: String, data: Int, clazz: Class<T>): T {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getBy(field: String, data: Long, clazz: Class<T>): T {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getBy(field: String, data: Float, clazz: Class<T>): T {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getBy(field: String, data: Double, clazz: Class<T>): T {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getBy(field: String, data: String, clazz: Class<T>): T {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun getBy(field: String, data: Boolean, clazz: Class<T>): T {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 }
