@@ -3,8 +3,7 @@
 
 ##### 2.Clean Architecture
 
-|---|----------|
-| ![Drag Racing](https://github.com/hoanganhtuan95ptit/MVVM-CleanArchitectureExample/image/cleanArchitecture.jpeg) |  ![Drag Racing](https://github.com/hoanganhtuan95ptit/MVVM-CleanArchitectureExample/image/cleanArchitecture2.png)  |
+ ![Drag Racing](https://github.com/hoanganhtuan95ptit/MVVM-CleanArchitectureExample/blob/master/image/cleanArchitecture.jpeg) |  ![Drag Racing](https://github.com/hoanganhtuan95ptit/MVVM-CleanArchitectureExample/blob/master/image/cleanArchitecture2.png)  
 
 
 
@@ -96,7 +95,7 @@
 
 ###### Pakage với kiến trúc Clean Architecture
 
-![Drag Racing](https://github.com/hoanganhtuan95ptit/MVVM-CleanArchitectureExample/image/cleanArchitecture3.jpeg)
+![Drag Racing](https://github.com/hoanganhtuan95ptit/MVVM-CleanArchitectureExample/blob/master/image/cleanArchitecture3.jpeg)
 
 * `Entities`
 
@@ -157,5 +156,11 @@
 * `ViewModel`
 
 -- app/ui/viewModel
+
+
+
+##### 3.Cảm ơn
+
+[Anthony Liberatore](https://medium.com/@ajliberatore/android-clean-architecture-mvvm-4df18933fa9)
 
 
