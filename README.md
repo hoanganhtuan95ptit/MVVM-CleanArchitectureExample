@@ -95,7 +95,7 @@
 
 ###### Pakage với kiến trúc Clean Architecture
 
-![Drag Racing](https://github.com/hoanganhtuan95ptit/MVVM-CleanArchitectureExample/blob/master/image/cleanArchitecture3.jpeg)
+![Drag Racing](https://github.com/hoanganhtuan95ptit/MVVM-CleanArchitectureExample/blob/master/image/cleanArchitecture3.png)
 
 * `Entities`
 
