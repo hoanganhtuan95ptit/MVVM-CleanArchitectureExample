@@ -3,6 +3,7 @@ package net.lab.myapplication.ui.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         imageViewModel =
-            ViewModelProviders.of(this, imageViewModelFactory).get(ImageViewModel::class.java)
+            ViewModelProvider(this, imageViewModelFactory).get(ImageViewModel::class.java)
 
         imageAdapter = ImageAdapter(this)
         imageAdapter.setRecyclerView(recyclerView)

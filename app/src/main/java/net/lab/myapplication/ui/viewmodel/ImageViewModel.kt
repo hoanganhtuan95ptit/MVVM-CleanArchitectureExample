@@ -8,12 +8,14 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import net.lab.domain.entities.ImageEntity
 import net.lab.domain.interact.ImageInteract
+import net.lab.myapplication.data.db.local.PreferenceHelper
 
 class ImageViewModel(
-    private val imageInteract: ImageInteract
-) : ViewModel() {
+    private val imageInteract: ImageInteract,
+    private val prefHelper: PreferenceHelper
+    ) : ViewModel() {
 
-    var images = MutableLiveData<List<ImageEntity>>()
+    internal var images = prefHelper.getListImage()
 
     fun getImage() {
         viewModelScope.launch(Dispatchers.Main) {

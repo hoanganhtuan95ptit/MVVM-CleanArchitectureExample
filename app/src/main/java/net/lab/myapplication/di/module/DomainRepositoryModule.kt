@@ -13,7 +13,7 @@ class DomainRepositoryModule {
 
     @Singleton
     @Provides
-    fun provideImageInteract(apiProvider: ApiProvider,dbProvider: DbProvider): ImageRepository {
+    fun provideImageRepository(apiProvider: ApiProvider,dbProvider: DbProvider): ImageRepository {
         return ImageRepositoryImpl(apiProvider,dbProvider)
     }
 

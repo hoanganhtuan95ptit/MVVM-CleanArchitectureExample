@@ -4,10 +4,7 @@ import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
 import net.lab.myapplication.App
-import net.lab.myapplication.di.module.DataApiModule
-import net.lab.myapplication.di.module.DataDbModule
-import net.lab.myapplication.di.module.DomainInteractModule
-import net.lab.myapplication.di.module.DomainRepositoryModule
+import net.lab.myapplication.di.module.*
 import net.lab.myapplication.di.module.ui.ActivityModule
 import net.lab.myapplication.di.module.ui.FragmentModule
 import net.lab.myapplication.di.module.ui.ViewModelFactoryModule
@@ -26,7 +23,8 @@ import javax.inject.Singleton
         DomainInteractModule::class,
         ViewModelFactoryModule::class,
         ActivityModule::class,
-        FragmentModule::class
+        FragmentModule::class,
+        AppModule::class
     ]
 )
 interface AppComponent {
