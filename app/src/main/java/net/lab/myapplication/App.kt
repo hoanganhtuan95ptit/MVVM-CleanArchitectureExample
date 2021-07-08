@@ -25,6 +25,7 @@ class App : MultiDexApplication(), HasActivityInjector, HasSupportFragmentInject
     override fun onCreate() {
         super.onCreate()
         shared = this
+        
         DaggerAppComponent.builder().application(this).build().inject(this)
     }
 
