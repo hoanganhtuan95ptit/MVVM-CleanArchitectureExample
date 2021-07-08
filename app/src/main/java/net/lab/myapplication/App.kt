@@ -28,6 +28,7 @@ class App : MultiDexApplication(), HasActivityInjector, HasSupportFragmentInject
 
 
 
+
         DaggerAppComponent.builder().application(this).build().inject(this)
     }
 
